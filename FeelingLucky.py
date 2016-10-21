@@ -1,8 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import time, sys
-search = input('Please enter your search')
+search = input('Please enter your search: ')
 browser = webdriver.Firefox()
 browser.get('https://www.google.com/')
-searchBar = browser.find_by_id('lst-ib')
-searchBar.send_keys(Keys.chord(search))
-browser.send_keys(Keys.ENTER)
+time.sleep(5) #Waits for page to load
+searchBar = browser.find_element_by_id('lst-ib')
+searchBar.click()
+searchBar.send_keys(search)
+time.sleep(2)
+searchBar.send_keys(Keys.ENTER)
