@@ -1,3 +1,5 @@
+#@Author Connor Barnhart
+# Takes in a topic to search and opens the first result
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time, sys
